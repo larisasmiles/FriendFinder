@@ -4,7 +4,7 @@
 //    * A POST routes `/api/friends`. This will be used to handle incoming survey results. This route will also be used to handle the compatibility logic. 
 
 
-var friendsData = require("../app/data/friends.js");
+var friendsData = require("../data/friends.js");
 
 
 ///////////////////////////////////////
@@ -23,6 +23,9 @@ module.exports = function(app) {
 	// post route 
 	app.post("/api/friends", function(req, res) {
 		friendsData.push(req.body);
+		// this is where we write the code to loop through the array of friends data. If the user 
+		// matches a friend then loop through to the next. 
+	
 		res.json(true);
 	});
 };
